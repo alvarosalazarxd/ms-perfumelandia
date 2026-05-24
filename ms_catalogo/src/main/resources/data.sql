@@ -1,0 +1,1 @@
+INSERT INTO productos (nombre, descripcion, precio, stock, categoria, marca) VALUES ('Perfume Dior', 'Perfume elegante', 89990, 10, 'General', 'Dior');
