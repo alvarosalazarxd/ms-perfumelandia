@@ -21,7 +21,7 @@ public class EnvioController {
 
     private final EnvioService envioService;
 
-    // LISTAR TODOS
+   
     @GetMapping
     public ResponseEntity<List<EnvioResponseDTO>>
     listarEnvios() {
@@ -30,7 +30,7 @@ public class EnvioController {
                 envioService.obtenerTodos());
     }
 
-    // OBTENER POR ID
+    
     @GetMapping("/{id}")
     public ResponseEntity<EnvioResponseDTO>
     obtenerPorId(@PathVariable Long id) {
@@ -39,7 +39,6 @@ public class EnvioController {
                 envioService.obtenerEnvioPorId(id));
     }
 
-    // CREAR ENVIO
     @PostMapping
     public ResponseEntity<EnvioResponseDTO>
     crearEnvio(
@@ -51,7 +50,7 @@ public class EnvioController {
                 .body(envioService.crearEnvio(requestDTO));
     }
 
-    // ACTUALIZAR ENVIO
+  
     @PutMapping("/{id}")
     public ResponseEntity<EnvioResponseDTO>
     actualizarEnvio(
@@ -66,7 +65,7 @@ public class EnvioController {
                         requestDTO));
     }
 
-    // ELIMINAR ENVIO
+   
     @DeleteMapping("/{id}")
     public ResponseEntity<Void>
     eliminarEnvio(@PathVariable Long id) {
@@ -76,7 +75,7 @@ public class EnvioController {
         return ResponseEntity.noContent().build();
     }
 
-    // BUSCAR POR CODIGO
+    
     @GetMapping("/codigo/{codigo}")
     public ResponseEntity<EnvioResponseDTO>
     buscarPorCodigo(
@@ -88,7 +87,7 @@ public class EnvioController {
                                 codigo));
     }
 
-    // BUSCAR POR ESTADO
+    
     @GetMapping("/estado/{estado}")
     public ResponseEntity<List<EnvioResponseDTO>>
     buscarPorEstado(
@@ -99,7 +98,7 @@ public class EnvioController {
                         estado));
     }
 
-    // BUSCAR POR TRANSPORTISTA
+    
     @GetMapping("/transportista/{transportista}")
     public ResponseEntity<List<EnvioResponseDTO>>
     buscarPorTransportista(
@@ -111,7 +110,7 @@ public class EnvioController {
                                 transportista));
     }
 
-    // BUSCAR POR PEDIDO
+    
     @GetMapping("/pedido/{pedidoId}")
     public ResponseEntity<List<EnvioResponseDTO>>
     buscarPorPedido(
